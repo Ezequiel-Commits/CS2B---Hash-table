@@ -33,7 +33,7 @@ class LinkedList:
         currNode = self.head
         # not an empty list
         while currNode != None:
-            print(currNode.value)
+            print(currNode.value, end = ", ")
             # Take your current node and go on to the next node
             currNode = currNode.nextNode
     
@@ -74,14 +74,11 @@ class LinkedList:
         """Get node by value(i.e. search)"""
         # Go through each element in the list to find a node with the specified value
         currHead = self.head
-        while currHead.nextNode != None:
+        while currHead != None:
             # There's still nodes to be searched
             if currHead.value == targetValue:
                 return str(currHead) + " found"
             currHead = currHead.nextNode
-        # One last check on the last node
-        if currHead.value == targetValue: #How else could I go about this? 
-                return str(currHead) + " found"
         return None
     
     def deleteElement(self, node):
@@ -106,7 +103,8 @@ l = LinkedList()
 
 # l.deleteElement(n3)
 
-l.printValues()
+ans = l.printValues()
+# print(ans)
 
 # ans = l.search(5)
 # print(ans)
